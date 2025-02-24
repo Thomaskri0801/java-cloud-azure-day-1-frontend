@@ -5,6 +5,7 @@ import PeopleList from './components/people/PeopleList'
 import PlanetList from './components/planet/PlanetList'
 import AddNewPerson from './components/people/AddNewPerson'
 import AddNewPlanet from './components/planet/AddNewPlanet'
+import ViewPeople from './components/planet/ViewPeople'
 
 const DataContext = createContext()
 
@@ -29,7 +30,7 @@ function App() {
           <h1>Menu</h1>
           <nav>
               <ul>
-                  <li><Link to="/people">Pepple List</Link></li>
+                  <li><Link to="/people">People List</Link></li>
                   <li><Link to="/planets">Planet List</Link></li>
               </ul>
           </nav>
@@ -41,6 +42,7 @@ function App() {
               <Route path='/planets' element={<PlanetList/>}/>
               <Route path='/addPerson' element={<AddNewPerson/>}/>
               <Route path='/addPlanet' element={<AddNewPlanet/>}/>
+              <Route path='/viewPeople/:id' element={<ViewPeople/>}/>
           </Routes>
         </DataContext.Provider>
       </main>

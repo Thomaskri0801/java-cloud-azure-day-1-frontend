@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { DataContext } from '../../App';
 
 function PlanetListItem(planet) {
@@ -22,6 +22,7 @@ function PlanetListItem(planet) {
         <tr>
             <td>{planet.planet.name}</td>
             <td>{planet.planet.destroydByTheDeathStar.toString()}</td>
+            <td><button><Link to={`/viewPeople/${planet.planet.id}`}>Habitants</Link></button></td>
             <td><button onClick={() => removePlanet(planet)}>X</button></td>
         </tr>
     )
